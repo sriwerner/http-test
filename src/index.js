@@ -5,6 +5,11 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import axios from "axios";
 
+axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
+axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+axios.defaults.headers.common["Content-Type"] = "application/json";
+axios.defaults.headers.common["crossDomain"] = true;
+
 axios.interceptors.request.use(
   request => {
     console.log(request);
